@@ -39,7 +39,7 @@ hier kan de admin headphone info wijzigen.
 
 <img src ="planning/edit-pagina.png">
 
-## Dit website zal gebruik maken van deze technologies:
+## Dit website zal gebruik maken van deze technologies/api:
 1. HTML
 2. CSS
 3. Javascript
