@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Voeg nieuwe headphone toe</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+    <!-- Bootstrap font icons -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.2/font/bootstrap-icons.min.css"
+        integrity="sha512-YFENbnqHbCRmJt5d+9lHimyEMt8LKSNTMLSaHjvsclnZGICeY/0KYEeiHwD1Ux4Tcao0h60tdcMv+0GljvWyHg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- custom styles -->
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body>
+
+    <header>
+        <!-- Nav tabs -->
+        <div class="container">
+            <nav class="navbar navbar-expand-md">
+                <a class="navbar-brand" href="index.html">Ya headphones</a>
+                <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+                    aria-label="Toggle navigation"></button>
+                <div class="collapse navbar-collapse" id="collapsibleNavId">
+                    <ul class="navbar-nav justify-content-end w-100" id="navbar-ul">
+                        <!-- I have add this element, because I hadn't a better choice to get 'All headphones' link center-->
+                        <li class="nav-item">
+                            <a href="#" class="nav-link ">Orders</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link  active" href="#" aria-current="page">Products</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="row mt-3" id="go-back">
+                <div class="col-1"><a href="admin-panel.html" class="ps-2" style="color:#00789a">Ga terug</a></div>
+            </section>
+            <!-- title field-->
+            <section class="row">
+                <div class="col">
+                    <h1>Voeg product toe</h1>
+                </div>
+            </section>
+                <!-- id -->
+                <section class="row">
+                    <div class="col-12">
+                        <div class="mb-3">
+                            <label for="id" class="form-label">id</label>
+                            <input type="text" required class="form-control" name="id" id="id" placeholder="1412892">
+                        </div>
+                    </div>
+                </section>
+                <!-- name field-->
+                <section class="row">
+                    <div class="col-12">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" required class="form-control" name="name" id="name" placeholder="name">
+                        </div>
+                    </div>
+                </section>
+                <!-- specs  -->
+                <section class="row">
+                    <div class="col-12">
+                        <div class="mb-3">
+                            <label for="noise-cancellation" class="form-label">noise-cancellation</label>
+                            <input type="text" required class="form-control" name="noise-cancellation" id="noise-cancellation"
+                                placeholder="ja">
+                        </div>
+                    </div>
+                </section>
+                <section class="row">
+                    <div class="col-12">
+                        <div class="mb-3">
+                            <label for="draag-comfort" class="form-label">draag-comfort</label>
+                            <input type="text" required class="form-control" name="draag-comfort" id="draag-comfort"
+                                placeholder="zeer goed">
+                        </div>
+                    </div>
+                </section>
+                <section class="row">
+                    <div class="col-12">
+                        <div class="mb-3">
+                            <label for="geluids-kwaliteit" class="form-label">geluids-kwaliteit</label>
+                            <input type="text" required class="form-control" name="geluids-kwaliteit" id="geluids-kwaliteit"
+                                placeholder="goed">
+                        </div>
+                    </div>
+                </section>
+                <!-- Price field -->
+                <section class="row">
+                    <div class="col-12">
+                        <div class="mb-3">
+                            <label for="price" class="form-label">Price</label>
+                            <input type="text" required class="form-control" name="price" id="price" placeholder="40,86">
+                        </div>
+                    </div>
+                </section>
+                <!-- image field -->
+                <section class="row">
+                    <div class="col-12">
+                        <label for="url" class="form-label">Image</label>
+                        <div class="input-group mb-3">
+                            <input type="text" required class="form-control" placeholder="../images/[name of headphone.extenion]"
+                                id="url">
+                            <label class="input-group-text btn btn-secondary" id="preview-button" for="url">Preview</label>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- preview image field -->
+                <section class="row">
+                    <div class="col">
+                        <img src="../images/koptelefoon-1.jpg" id="preview-place" alt="koptelefoon"
+                                        style="border-radius: 380px; width: 354px;">
+                    </div>
+                </section>
+                
+                <!-- voeg toe button field -->
+                <section class="row mt-3" id="add">
+                    <div class="col">
+                        <button class="btn" style="background-color:#d8d8d8;font-size: 20px;border:1px solid salmon">Voeg
+                            toe</button>
+                    </div>
+                </section>
+        </div>
+    </main>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+        </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+        </script>
+    <!-- custuom scripts -->
+    <script src="../scripts/add-headphone.js"></script>
+</body>
+
+</html>
