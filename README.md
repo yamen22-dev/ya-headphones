@@ -29,7 +29,17 @@ hier ziet admin overzicht van alle headphones. Hier kan ook admin producten verw
 hier ziet admin overzicht van alle headphones. Hier kan ook admin producten verwijderen, toevoegen en wijzigen.
 <img src="planning/Add product.png">
 
-## Dit website zal gebruik maken van deze technologies:
+### bestellingen overzicht 
+hier ziet admin overzicht van bestelde headphones.
+
+<img src ="planning/orders-pagina.png">
+
+### edit product pagina 
+hier kan de admin headphone info wijzigen.
+
+<img src ="planning/edit-pagina.png">
+
+## Dit website zal gebruik maken van deze technologies/api:
 1. HTML
 2. CSS
 3. Javascript
@@ -38,6 +48,6 @@ hier ziet admin overzicht van alle headphones. Hier kan ook admin producten verw
 6. Google material icons
 
 ## Let op:
-Misschien heb je gemerkt dat pagina's zijn anders dan in de planning of in de foto's. Dat komt door op moment dat ik begon met coderen van het website merk ik dat bepaalde dingen zijn beter op een net andere manier.
+Misschien heb je gemerkt dat sommige pagina's zijn anders dan in de planning of in de foto's. Dat komt door op moment dat ik begon met coderen van het website merk ik dat sommige dingen zijn beter op een net andere manier.
 
 
