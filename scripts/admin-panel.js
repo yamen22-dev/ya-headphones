@@ -182,7 +182,7 @@ function saveChanges() {
         setLocalStorage("data",data);
         showSuccessAlert();
         setTimeout(() => {
-            window.location.replace("../pages/admin-panel.html");
+            window.location.replace("../pages/../admin.html");
         }, 5000);
     });
 }
