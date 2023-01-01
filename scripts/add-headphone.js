@@ -2,6 +2,7 @@ function main() {
     document.querySelector("form").addEventListener("submit", (e)=> {
         e.preventDefault();
         readFields();
+        window.location.replace("../admin.html");
     } );
     const previewButton = document.getElementById("preview-button");
     const previewPlace = document.getElementById("preview-place");
