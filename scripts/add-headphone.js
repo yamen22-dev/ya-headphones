@@ -1,6 +1,14 @@
 function main() {
-    document.querySelector("#add").addEventListener("click", readFields);
-    previewImage();
+    document.querySelector("form").addEventListener("submit", (e)=> {
+        e.preventDefault();
+        readFields();
+    } );
+    const previewButton = document.getElementById("preview-button");
+    const previewPlace = document.getElementById("preview-place");
+    previewButton.addEventListener("click", () => {
+        const url = document.getElementById("url").value;
+        previewPlace.src = url;
+    });
 }
 function readLocalStorage(key) {
     return JSON.parse(localStorage.getItem(key));
@@ -27,10 +35,10 @@ function checkInputs(inputs) {
 function checkDubble (item) {
     for (const element of readLocalStorage('data')) {
         if (JSON.stringify(element) === JSON.stringify(item)) {
-            return true;
+            return false;
         }
     }
-    return false;
+    return true;
 }
 function readFields() {
     const id = document.getElementById("id").value;
@@ -48,12 +56,5 @@ function readFields() {
         setLocalStorage("data",data)
     }
 }
-function previewImage() {
-    const previewButton = document.getElementById("preview-button");
-    const previewPlace = document.getElementById("preview-place");
-    previewButton.addEventListener("click", () => {
-        const url = document.getElementById("url").value;
-        previewPlace.src = url;
-    });
-}
+
 main();
