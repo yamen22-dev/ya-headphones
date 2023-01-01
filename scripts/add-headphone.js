@@ -37,6 +37,8 @@ function checkDubble (item) {
     for (const element of readLocalStorage('data')) {
         if (JSON.stringify(element) === JSON.stringify(item)) {
             return false;
+        } else {
+            console.log(JSON.stringify(element), JSON.stringify(item));
         }
     }
     return true;
