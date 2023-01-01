@@ -80,20 +80,14 @@ function cartConfirmation() {
         document.body.querySelector("main").remove();
         document.body.innerHTML += `
         <div class="text-center"><h1 class="h1">Je bestelling is afgerond!</h1></div>`;
+        cartFill();
     });
 }
 function cartFill() {
     if (checkWinkelwagen()) {
-        document.getElementById("cart").innerHTML = `
-    <a class="nav-link" href="winkelwagen.html" id="cart">
-                            <i class="bi bi-cart-fill"></i>
-                        </a>`
+        document.getElementById("cart").innerHTML = `<i class="bi bi-cart-fill"></i>`;
     } else {
-        console.log("there is no items in cart");
-        document.getElementById("cart").innerHTML = `
-    <a class="nav-link" href="winkelwagen.html" id="cart">
-                            <i class="bi bi-cart"></i>
-                        </a>`
+        document.getElementById("cart").innerHTML = `<i class="bi bi-cart"></i>`;
     }
 }
 function getItem(name) {
@@ -113,8 +107,9 @@ function getItemId(id) {
 function leegWinkelwagen() {
     document.body.querySelector("main").remove();
     document.body.innerHTML += `
-                    <div class="text-center"><h1 class="h1">Je wineklwagen is leeg!</h1></div>`;
+    <div class="text-center"><h1 class="h1">Je wineklwagen is leeg!</h1></div>`;
     localStorage.removeItem("winkelwagen");
+    cartFill();
 }
 function buttonsFunctions() {
     const buttons = document.querySelectorAll("button");
@@ -159,7 +154,11 @@ function totalCaculate() {
         const amount = parseFloat(document.querySelectorAll("input")[index].value);
         total += price * amount;
     }
-    document.querySelector("#total").innerText = "€" + total.toFixed(2);
+    try {
+        document.querySelector("#total").innerText = "€" + total.toFixed(2);
+    } catch (error) {
+        console.log("there is no products in cart");
+    }
 }
 function loadPage() {
     document.querySelector("main").innerHTML += `
@@ -191,8 +190,8 @@ function loadPage() {
 }
 if (checkWinkelwagen()) {
     loadPage();
-    cartFill();
     cartConfirmation();
     buttonsFunctions();
     totalCaculate();
 }
+cartFill();

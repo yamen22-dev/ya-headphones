@@ -1,7 +1,6 @@
 function main() {
-    document.querySelector("#add").addEventListener("click", addToLocalStorage);
+    document.querySelector("#add").addEventListener("click", readFields);
     previewImage();
-    readFields();
 }
 function readLocalStorage(key) {
     return JSON.parse(localStorage.getItem(key));
@@ -25,6 +24,14 @@ function checkInputs(inputs) {
     }
     return true;
 }
+function checkDubble (item) {
+    for (const element of readLocalStorage('data')) {
+        if (JSON.stringify(element) === JSON.stringify(item)) {
+            return true;
+        }
+    }
+    return false;
+}
 function readFields() {
     const id = document.getElementById("id").value;
     const price = document.getElementById("price").value;
@@ -35,10 +42,10 @@ function readFields() {
     const url = document.getElementById("url").value;
     const specs = { "noise-cancellation": noise, "draag-comfort": draag, "geluids-kwaliteit": geluids };
     const inputs = { "id": id, "name": name, "specs": specs, "price": price, "url": url };
-    if (checkInputs([inputs])) {
+    if (checkInputs([id,price,name,noise,draag,geluids,url,specs]) && checkDubble(inputs)) {
         let data = readLocalStorage("data");
         data.push(inputs);
-        setLocalStorage("data", data);
+        setLocalStorage("data",data)
     }
 }
 function previewImage() {
@@ -46,7 +53,6 @@ function previewImage() {
     const previewPlace = document.getElementById("preview-place");
     previewButton.addEventListener("click", () => {
         const url = document.getElementById("url").value;
-        console.log(url);
         previewPlace.src = url;
     });
 }

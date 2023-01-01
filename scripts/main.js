@@ -2,7 +2,7 @@ if (localStorage.getItem("data") == null) {
     /**
      * this checks if the json file readed or not. This is important to know if their is information in the website
      */
-    fetch("../scripts/data.js")
+    fetch("scripts/data.js")
         .then((response) => response.json())
         .then(data => {
             localStorage.setItem("data", JSON.stringify(data));
@@ -69,15 +69,9 @@ function cartFill() {
     for (const button of document.querySelectorAll("#voeg-toe-winkelwagen-knop")) {
         button.addEventListener("click", () => {
             if (checkWinkelwagen()) {
-                document.getElementById("cart").innerHTML = `
-        <a class="nav-link" href="winkelwagen.html" id="cart">
-                                <i class="bi bi-cart-fill"></i>
-                            </a>`
+                document.getElementById("cart").innerHTML = `<i class="bi bi-cart-fill"></i>`
             } else {
-                document.getElementById("cart").innerHTML = `
-        <a class="nav-link" href="winkelwagen.html" id="cart">
-                                <i class="bi bi-cart"></i>
-                            </a>`
+                document.getElementById("cart").innerHTML = `<i class="bi bi-cart"></i>`
             }
         })
     };
