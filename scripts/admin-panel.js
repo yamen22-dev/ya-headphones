@@ -3,6 +3,7 @@ if (localStorage.getItem("data") === null) {
 } else {
     main();
 }
+document.querySelector("#read-json-button").addEventListener("click", readJson);
 function readLocalStorage(key) {
     return JSON.parse(localStorage.getItem(key));
 }
@@ -82,7 +83,7 @@ function deleteButton() {
     }
 }
 async function readJson() {
-    const response = await fetch('../scripts/data.js');
+    const response = await fetch('scripts/data.js');
     const result = await response.json();
     setLocalStorage('data', result);
     main();
@@ -147,11 +148,10 @@ function loadEditPage(id) {
         }
     }
 }
-
 function showSuccessAlert () {
     const oldHTML = document.querySelector("main").innerHTML; 
     const alert = `<div class="alert alert-success" role="alert">
-            <h2>The new information is saved !!!</h2>
+            <h2>The new information is saved !!! U zal binnen 5 seconde terug naar admin panel teruggestuurd</h2>
         </div>`;
     const newHTML = alert + oldHTML;
     document.querySelector("main").innerHTML = newHTML;
@@ -174,17 +174,16 @@ function saveChanges() {
         const value = setDataIntoStorageFromInputs();
         const data = readLocalStorage("data");
         for (let index = 0; index < data.length; index++) {
-            const element = data[index];
-            if (element.id === value.id) {
+            if (value.id === data[index].id) {
                 data[index] = value;
+                console.log(value);
             }
         }
         setLocalStorage("data",data);
         showSuccessAlert();
         setTimeout(() => {
-            window.location.replace("../pages/../admin.html");
+            window.location.replace("admin.html");
         }, 5000);
     });
 }
-document.querySelector("#read-json-button").addEventListener("click", readJson);
 for (const button of document.querySelectorAll("#edit")) button.addEventListener("click", (event) => editPage(event));

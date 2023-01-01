@@ -132,7 +132,6 @@ function buttonsFunctions() {
                 }
             } else if (event.target.innerText === "add_circle") {
                 event.target.parentElement.parentElement.querySelector("input").value = parseInt(event.target.parentElement.parentElement.querySelector("input").value) + 1;
-                totalCaculate();
             } else if (event.target.innerText === "remove_circle") {
                 if (parseInt(event.target.parentElement.parentElement.querySelector("input").value) > 1) {
                     event.target.parentElement.parentElement.querySelector("input").value = parseInt(event.target.parentElement.parentElement.querySelector("input").value) - 1
@@ -149,6 +148,7 @@ function buttonsFunctions() {
                     }
                 }
             }
+            totalCaculate();
         });
     }
 }

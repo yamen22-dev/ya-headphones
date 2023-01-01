@@ -21,7 +21,7 @@ function setInfoIntoCards(aantalProducten) {
         const el =
             `<div class="col-1 col-md-4">
             <div class="card text-center">
-                <img class="card-img-top" src="../images/koptelefoon-${index + 1}.jpg" alt="zwarte koptelefoon   ">
+                <img class="card-img-top" src="images/koptelefoon-${index + 1}.jpg" alt="zwarte koptelefoon   ">
                     <div class="card-body">
                         <h4 class="card-title">${data[index].name}</h4>
                         <p class="card-text">Noise-cancellation: ${data[index].specs["noise-cancellation"]}</p>
