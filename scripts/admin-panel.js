@@ -105,7 +105,7 @@ function editPage(event) {
     // load edit page
     loadEditPage(id);
     // opslaan gewijzigde gegevens 
-    saveChanges();
+    saveChanges(item);
 }
 function loadEditPage(id) {
     for (const item of readLocalStorage("data")) {
@@ -156,7 +156,7 @@ function showSuccessAlert () {
     const newHTML = alert + oldHTML;
     document.querySelector("main").innerHTML = newHTML;
 }
-function setDataIntoStorageFromInputs() {
+function readFields() {
     const fields = document.querySelectorAll("input");
     const id = fields[0].value;
     const name = fields[1].value;
@@ -168,21 +168,21 @@ function setDataIntoStorageFromInputs() {
     const inputsValue = { "id": id, "name": name, "specs": { "noise-cancellation": noise, "draag-comfort": draag, "geluids-kwaliteit": sound }, "price": price, "url": url };
     return inputsValue;
 }
-function saveChanges() {
+function saveChanges(oldItem) {
     const button = document.querySelectorAll("button")[1];
     button.addEventListener("click", () => {
-        const value = setDataIntoStorageFromInputs();
+        const value = readFields();
         let data = readLocalStorage("data");
         for (let index = 0; index < data.length; index++) {
-            if (data[index].id === value.id) {
+            if (JSON.stringify(oldItem) === JSON.stringify(data[index])) {
                 data[index] = value;
             }
         }
         setLocalStorage("data",data);
         showSuccessAlert();
-        // setTimeout(() => {
-        //     window.location.replace("admin.html");
-        // }, 5000);
+        setTimeout(() => {
+            window.location.replace("admin.html");
+        }, 2000);
     });
 }
 document.querySelector("#read-json-button").addEventListener("click", readJson);
