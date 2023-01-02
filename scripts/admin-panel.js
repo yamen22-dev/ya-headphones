@@ -172,18 +172,17 @@ function saveChanges() {
     const button = document.querySelectorAll("button")[1];
     button.addEventListener("click", () => {
         const value = setDataIntoStorageFromInputs();
-        const data = readLocalStorage("data");
+        let data = readLocalStorage("data");
         for (let index = 0; index < data.length; index++) {
-            const element = data[index];
-            if (element.id === value.id) {
+            if (data[index].id === value.id) {
                 data[index] = value;
             }
         }
         setLocalStorage("data",data);
         showSuccessAlert();
-        setTimeout(() => {
-            window.location.replace("admin.html");
-        }, 5000);
+        // setTimeout(() => {
+        //     window.location.replace("admin.html");
+        // }, 5000);
     });
 }
 document.querySelector("#read-json-button").addEventListener("click", readJson);
