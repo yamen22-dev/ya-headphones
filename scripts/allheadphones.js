@@ -74,15 +74,9 @@ function cartFill() {
     for (const button of document.querySelectorAll("#voeg-toe-winkelwagen-knop")) {
         button.addEventListener("click", () => {
             if (checkWinkelwagen()) {
-                document.getElementById("cart").innerHTML = `
-        <a class="nav-link" href="winkelwagen.html" id="cart">
-                                <i class="bi bi-cart-fill"></i>
-                            </a>`
+                document.getElementById("cart").innerHTML = `<i class="bi bi-cart-fill"></i>`
             } else {
-                document.getElementById("cart").innerHTML = `
-        <a class="nav-link" href="winkelwagen.html" id="cart">
-                                <i class="bi bi-cart"></i>
-                            </a>`
+                document.getElementById("cart").innerHTML = `<i class="bi bi-cart"></i>`
             }
         })
     };
